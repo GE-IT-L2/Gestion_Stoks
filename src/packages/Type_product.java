@@ -16,4 +16,5 @@ public class Type_product {
     public String getNom(){
         return nom;
     }
+
 }
