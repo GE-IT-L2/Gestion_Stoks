@@ -1,6 +1,7 @@
 package packages;
 
 public class Product {
+    private int id;
     private String designation;
     private double prixUnitaire;
     private String unite; //gros na detail
