@@ -18,7 +18,10 @@ public class Product {
     }
 
 
-    //Pour lire les variables private il faut des accesseur (getteurs)
+    public int getId(){
+        return id;
+    }
+
     public int getStock(){
         return stock;
     }
@@ -30,7 +33,6 @@ public class Product {
     }
 
 
-    //Methode
     public void ajouterStock(int quantite){
         this.stock += quantite;
     }
@@ -41,5 +43,14 @@ public class Product {
         }else{
             System.out.println("Stock insuffisant");
         }
+    }
+
+    public void afficher() {
+        System.out.println("ID: " + id);
+        System.out.println("Nom: " + designation);
+        System.out.println("Prix: " + prixUnitaire);
+        System.out.println("Stock: " + stock);
+        System.out.println("Type: " + type_product.getNom());
+        System.out.println("------------------------");
     }
 }
