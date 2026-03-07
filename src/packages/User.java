@@ -7,13 +7,15 @@ public class User {
     private String login;
     private String password;
     private String role;
+    private boolean isActive;  
 
-    public User(String userId, String userName, String login, String password, String role) {
+    public User(String userId, String userName, String login, String password, String role, boolean isActive) {
         this.userId = userId;
         this.userName = userName;
         this.login = login;
         this.password = password;
         this.role = role;
+        this.isActive = isActive;
     }
 
     public String getUserId() { return userId; }
@@ -31,8 +33,21 @@ public class User {
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
 
+    public boolean isActive() {return isActive; }
+    public void setActive(boolean active) {isActive = active; }
+
+    public void activate(){
+        this.isActive = true;
+        System.out.println("Account " + userName + " activated");
+    }
+
+    public void desactivate(){
+        this.isActive = false;
+        System.out.println("Account " + userName + " deactivated");
+    }
+
     @Override
     public String toString() {
-        return "User{userId=" + userId + ", username=" + userName + ", login=" + login + ", role=" + role + "}";
+        return "User{userId=" + userId + ", username=" + userName + ", login=" + login + ", role=" + role + ",activate=" +(isActive ? "yes" : "no") + "}";
     }
 }
